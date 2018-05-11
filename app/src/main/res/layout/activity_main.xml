@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cordinatorLayoutActivityA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pozadina_mape"
+    android:fitsSystemWindows="true"
+    tools:context="com.logicchip.blog_14_floatingsearchview.MainActivity">
+
+    <include layout="@layout/nav_buttons" />
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@android:color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">    <!-- Making cardsView invisible! -->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:visibility="gone"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:cardBackgroundColor="@color/colorIcons"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searchViewQuery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@null"
+                    android:text="Search"
+                    android:textColor="@color/colorPrimaryText"
+                    app:closeIcon="@drawable/ic_close"
+                    app:iconifiedByDefault="false"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:queryHint="Search" />
+
+                <ImageButton
+                    android:id="@+id/imageViewSearchMenu"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_toStartOf="@+id/separate"
+                    android:contentDescription="@null"
+                    android:onClick="PopupShowMenu"
+                    android:src="@drawable/ic_search" />
+
+                <ImageButton
+                    android:id="@+id/filter"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:contentDescription="@null"
+                    android:onClick="PopupShowMenu"
+                    android:src="@drawable/ic_filter" />
+
+                <ImageButton
+                    android:id="@+id/separate"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_toStartOf="@+id/filter"
+                    android:contentDescription="@null"
+                    android:onClick="PopupShowMenu"
+                    android:src="@drawable/ic_separate" />
+
+                <ImageButton
+                    android:id="@+id/imageViewDrawerMenu"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginLeft="5dp"
+                    android:contentDescription="@null"
+                    android:onClick="PopupShowMenu"
+                    android:src="@drawable/ic_menu" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
